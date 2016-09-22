@@ -84,7 +84,6 @@ def dict2tuples(word_dict, key=None):
     >>> dict2tuples({'a': 2, 'b': 5, 'c': 1}, key=lambda t: t[1])
     [('b', 5), ('a', 2), ('c', 1)]
     """
-    return sorted([(k, v) for k, v in word_dict.items()], key=key, reverse=True)
 ```
 
 ```Python
@@ -125,10 +124,6 @@ def word_hist(bar_list):
      '          an | XXXXXXXX',
      'shenannigans | XX']
     """
-    max_len = len(max(bar_list, key=lambda t: len(t[0]))[0])
-    return ["{word} | {bars}".format(word=w.rjust(max_len),
-                                     width=max_len, bars="X"*len)
-            for w, len in bar_list]
 ```
 
 ### `main`
